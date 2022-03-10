@@ -13,7 +13,26 @@ class Alumnos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('alumnos', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            $table->bigInteger('profesor_id')->unsigned();
+
+            #$table->id();
+            $table->string("FirstName");
+            $table->string("SecondName");
+            $table->string("LastName");
+            $table->string("DateOfBirth");
+            $table->string("Address");
+            $table->string("Email");
+            $table->string("Dpi");
+            $table->string("Cel");
+            /*Crearé el dato de foto, por si lo llegara a ocupar despues en el curso, pero quedará deshabilidado
+            $table->string("Foto");*/
+            $table->timestamps();
+
+            $table->foreign('profesor_id')->references('id')->on('coursesandteachers');
+        });
     }
 
     /**
@@ -23,6 +42,7 @@ class Alumnos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('alumnos');
     }
+
 }

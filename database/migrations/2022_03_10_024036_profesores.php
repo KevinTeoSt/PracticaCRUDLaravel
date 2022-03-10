@@ -13,7 +13,19 @@ class Profesores extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('coursesandteachers', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            # $table->id();
+            $table->string("Name");
+            $table->string("LastName");
+            $table->string("DateOfBirth");
+            $table->string("Email");
+            $table->string("Cel");
+            $table->string("Course");
+            $table->string("Schedule");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +35,7 @@ class Profesores extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('coursesandteachers');
     }
+
 }

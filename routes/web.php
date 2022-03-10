@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\CoursesandteacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('alumnos', \App\Http\Controllers\AlumnoController::class);
+Route::resource('coursesandteachers', \App\Http\Controllers\CoursesandteacherController::class);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
