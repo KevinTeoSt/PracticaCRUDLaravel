@@ -55,81 +55,45 @@
 
 </center>
 
-@extends('layouts.app')
-
-@section('template_title')
-@section('template_title')
-    Alumno
-@endsection
-
-@section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Alumno') }}
-                            </span>
 
 
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Profesor Name</th>
+        <th scope="col">Schedule</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Second Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">DPI</th>
+        <th scope="col">Phone</th>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                <tr>
-                                    <th>No</th>
+    </tr>
+    </thead>
 
-                                    <th>Profesor Name</th>
-                                    <th>Firstname</th>
-                                    <th>Secondname</th>
-                                    <th>Lastname</th>
-                                    <th>Dateofbirth</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Dpi</th>
-                                    <th>Cel</th>
+    <tbody>
+    @foreach($alumnos as $alumno)
+        <tr>
+            <td>{{ $alumno->coursesandteacher->Name }}</td>
+            <td>{{ $alumno->coursesandteacher->Course }}</td>
+            <td>{{ $alumno->coursesandteacher->Schedule }}</td>
+            <td>{{ $alumno->FirstName }}</td>
+            <td>{{ $alumno->SecondName }}</td>
+            <td>{{ $alumno->LastName }}</td>
+            <td>{{ $alumno->DateOfBirth }}</td>
+            <td>{{ $alumno->Address }}</td>
+            <td>{{ $alumno->Email }}</td>
+            <td>{{ $alumno->Dpi }}</td>
+            <td>{{ $alumno->Cel }}</td>
 
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach ($alumnos as $alumno)
-                                    <tr>
-                                        <td>{{ ++$i }}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
 
-                                        <td>{{ $alumno->coursesandteacher->Name }}</td>
-                                        <td>{{ $alumno->FirstName }}</td>
-                                        <td>{{ $alumno->SecondName }}</td>
-                                        <td>{{ $alumno->LastName }}</td>
-                                        <td>{{ $alumno->DateOfBirth }}</td>
-                                        <td>{{ $alumno->Address }}</td>
-                                        <td>{{ $alumno->Email }}</td>
-                                        <td>{{ $alumno->Dpi }}</td>
-                                        <td>{{ $alumno->Cel }}</td>
-
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {!! $alumnos->links() !!}
-            </div>
-        </div>
-    </div>
-@endsection
 </body>
 </html>
-
