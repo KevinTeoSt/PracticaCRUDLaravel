@@ -49,7 +49,7 @@
             <img src="https://cdn.pixabay.com/photo/2012/05/07/01/54/owl-47526__480.png"
                  alt="Más de 100 vectores de Alumno y Ojo gratis" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb"
                  data-noaft="1" style="width: 183px; height: 161.179px; margin: 0px;">
-            <h2>Student Registration</h2>
+            <h2>Teachers Registration</h2>
             <p class="lead">All fields are required.</p>
         </div>
 

@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $alumnos->links() !!}
+
             </div>
         </div>
     </div>
