@@ -26,17 +26,17 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Alumno extends Model
 {
-    
+
     static $rules = [
-		'profesor_id' => 'required',
-		'FirstName' => 'required',
-		'SecondName' => 'required',
-		'LastName' => 'required',
-		'DateOfBirth' => 'required',
-		'Address' => 'required',
-		'Email' => 'required',
-		'Dpi' => 'required',
-		'Cel' => 'required',
+        'profesor_id' => 'required',
+        'FirstName' => 'required',
+        'SecondName' => 'required',
+        'LastName' => 'required',
+        'DateOfBirth' => 'required',
+        'Address' => 'required',
+        'Email' => 'required',
+        'Dpi' => 'required',
+        'Cel' => 'required',
     ];
 
     protected $perPage = 20;
@@ -46,7 +46,7 @@ class Alumno extends Model
      *
      * @var array
      */
-    protected $fillable = ['profesor_id','FirstName','SecondName','LastName','DateOfBirth','Address','Email','Dpi','Cel'];
+    protected $fillable = ['profesor_id', 'FirstName', 'SecondName', 'LastName', 'DateOfBirth', 'Address', 'Email', 'Dpi', 'Cel'];
 
 
     /**
@@ -56,6 +56,6 @@ class Alumno extends Model
     {
         return $this->hasOne('App\Models\Coursesandteacher', 'id', 'profesor_id');
     }
-    
+
 
 }

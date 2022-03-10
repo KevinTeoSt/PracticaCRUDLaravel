@@ -35,14 +35,14 @@ class AlumnoController extends Controller
         $alumno = new Alumno();
 
         #Se agregó esto para hacer el select
-        $profesor= Coursesandteacher::pluck('Name', 'id');
+        $profesor = Coursesandteacher::pluck('Name', 'id');
         return view('alumno.create', compact('alumno', 'profesor'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -58,7 +58,7 @@ class AlumnoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,22 +71,22 @@ class AlumnoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $alumno = Alumno::find($id);
         #Se agregó esto para hacer el select
-        $profesor= Coursesandteacher::pluck('Name', 'id');
+        $profesor = Coursesandteacher::pluck('Name', 'id');
         return view('alumno.edit', compact('alumno', 'profesor'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Alumno $alumno
+     * @param \Illuminate\Http\Request $request
+     * @param Alumno $alumno
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Alumno $alumno)

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CoursesandteacherController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

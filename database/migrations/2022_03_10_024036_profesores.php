@@ -14,7 +14,7 @@ class Profesores extends Migration
     public function up()
     {
         Schema::create('coursesandteachers', function (Blueprint $table) {
-            $table->engine="InnoDB";
+            $table->engine = "InnoDB";
             $table->bigIncrements('id');
             # $table->id();
             $table->string("Name");

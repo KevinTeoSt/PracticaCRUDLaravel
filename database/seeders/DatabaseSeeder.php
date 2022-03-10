@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Estudiante;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use App\Models\Profesor;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        User::factory(5)->create();
+        Profesor::factory(20)->create();
+        Estudiante::factory(20)->create();
+
     }
 }
