@@ -111,13 +111,15 @@
                                         <td>{{ $coursesandteacher->Schedule }}</td>
 
                                         <td>
-                                            <form
-                                                action="{{ route('coursesandteachers.destroy',$coursesandteacher->id) }}"
+                                            <form action="{{ route('coursesandteachers.destroy',$coursesandteacher->id) }}"
                                                 method="POST">
-                                            <!-- <a class="btn btn-sm btn-primary " href="{{ route('coursesandteachers.show',$coursesandteacher->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>-->
+
                                                 <a class="btn btn-sm btn-success"
                                                    href="{{ route('coursesandteachers.edit',$coursesandteacher->id) }}"><i
                                                         class="fa fa-fw fa-edit"></i> Edit</a>
+
+
+
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"><i
